@@ -21,6 +21,8 @@ Ping is an Android-first emergency communication app designed for disaster condi
   - text/broadcast messaging
   - peer list
   - delivery status visibility
+  - message flow visualisation panel
+- Hacker-style dark theme (black + neon green)
 
 ## Architecture (high-level)
 
