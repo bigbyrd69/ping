@@ -23,11 +23,6 @@ class MainActivity : ComponentActivity() {
                 ) {
                     PingApp()
                 }
-            Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background
-            ) {
-                PingApp()
             }
         }
     }
