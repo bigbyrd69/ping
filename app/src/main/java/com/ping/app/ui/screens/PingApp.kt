@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -39,6 +40,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ping.app.domain.model.MeshPacket
 import com.ping.app.domain.model.PacketType
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.ping.app.domain.model.MeshPacket
 import com.ping.app.domain.model.Peer
 import com.ping.app.ui.PingViewModel
 
@@ -54,6 +58,7 @@ fun PingApp(viewModel: PingViewModel = viewModel()) {
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background)
         ) {
+        Column(modifier = Modifier.padding(padding)) {
             TabRow(selectedTabIndex = selectedTab) {
                 tabs.forEachIndexed { index, title ->
                     Tab(selected = selectedTab == index, onClick = { selectedTab = index }, text = { Text(title) })
@@ -78,6 +83,7 @@ private fun SosScreen(viewModel: PingViewModel) {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text("Emergency Actions", fontWeight = FontWeight.Bold)
+        Text("Emergency Actions")
         Button(onClick = { viewModel.sendSos() }, modifier = Modifier.fillMaxWidth()) {
             Text("Send SOS Broadcast")
         }
@@ -97,6 +103,7 @@ private fun MessageScreen(viewModel: PingViewModel) {
             .fillMaxSize()
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             OutlinedTextField(
